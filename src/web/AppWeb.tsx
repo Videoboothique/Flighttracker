@@ -178,7 +178,7 @@ function DashboardTab({
   return (
     <section className="web-stack">
       <header className="web-hero">
-        <p className="web-eyebrow">Paramotor Maatje</p>
+        <div className="web-hero-badge">Paramotor Maatje</div>
         <h1>Hallo {profile.name}</h1>
         <p>Klaar om je volgende vlucht te plannen?</p>
       </header>
@@ -605,8 +605,9 @@ export function AppWeb() {
         <div className="web-topbar">
           <div>
             <strong>Stef Stuntpiloot</strong>
-            <span>mobile web app</span>
+            <span>Flight tracker voor mobiel web</span>
           </div>
+          <div className="web-topbar-glow" />
         </div>
 
         <div className="web-content">
