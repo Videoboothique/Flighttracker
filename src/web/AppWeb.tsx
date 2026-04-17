@@ -589,6 +589,24 @@ export function AppWeb() {
   const [selectedFlightId, setSelectedFlightId] = useState<string | null>(null);
   const [formState, setFormState] = useState<FlightFormState | null>(null);
 
+  const canGoBack = activeTab !== 'dashboard' || selectedFlightId !== null || formState !== null;
+
+  const handleBack = () => {
+    if (formState) {
+      setFormState(null);
+      return;
+    }
+
+    if (selectedFlightId) {
+      setSelectedFlightId(null);
+      return;
+    }
+
+    if (activeTab !== 'dashboard') {
+      setActiveTab('dashboard');
+    }
+  };
+
   if (!isLoaded) {
     return (
       <main className="web-shell">
@@ -603,6 +621,13 @@ export function AppWeb() {
     <main className="web-shell">
       <section className="web-phone-frame">
         <div className="web-topbar">
+          {canGoBack ? (
+            <button type="button" className="web-back-button" onClick={handleBack} aria-label="Ga terug">
+              ←
+            </button>
+          ) : (
+            <div className="web-back-button-placeholder" />
+          )}
           <div>
             <strong>Stef Stuntpiloot</strong>
             <span>Flight tracker voor mobiel web</span>
