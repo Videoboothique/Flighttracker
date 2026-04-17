@@ -401,13 +401,18 @@ input {
 
 @media (max-width: 420px) {
   .web-shell {
-    padding: 12px 10px 18px;
+    padding: 0;
   }
 
   .web-phone-frame {
-    height: calc(100vh - 24px);
-    max-height: calc(100vh - 24px);
-    border-radius: 26px;
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
   }
 
   .web-content {
@@ -419,12 +424,22 @@ input {
   }
 
   .web-bottom-nav {
-    margin: 0 10px 10px;
+    margin: 0 10px calc(env(safe-area-inset-bottom, 0px) + 10px);
     padding: 6px;
   }
 
   .web-bottom-nav button {
     min-height: 46px;
     font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .web-shell {
+    width: 100%;
+  }
+
+  .web-phone-frame {
+    max-width: 100%;
   }
 }
