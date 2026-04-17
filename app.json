@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "robertjan-flight-tracker",
+    "name": "Paramotor Maatje",
     "slug": "robertjan-flight-tracker",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -23,6 +23,7 @@
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
+    "plugins": ["react-native-maps"],
     "web": {
       "favicon": "./assets/favicon.png"
     }
